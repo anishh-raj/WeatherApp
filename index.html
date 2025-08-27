@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 w-full max-w-sm flex flex-col items-center space-y-6">
+
+        <!-- Search Bar -->
+        <div class="w-full flex justify-between items-center bg-gray-200 rounded-full overflow-hidden shadow-inner">
+            <input type="text" id="city-input" placeholder="Enter a city"
+                   class="flex-grow bg-transparent p-4 outline-none text-gray-800 placeholder-gray-500 rounded-full">
+            <button id="search-button" class="bg-blue-600 text-white p-4 rounded-full w-12 h-12 flex items-center justify-center transform transition duration-200 hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Weather Display Section -->
+        <div id="weather-display" class="w-full text-center hidden">
+            <!-- Loading Indicator & Error Message -->
+            <div id="message-box" class="text-center">
+                <p id="message-text" class="text-gray-600 italic"></p>
+            </div>
+
+            <div id="weather-details" class="flex flex-col items-center space-y-4">
+                <h2 id="city-name" class="text-3xl font-bold text-gray-800"></h2>
+                
+                <!-- Weather Icon and Description -->
+                <div class="flex items-center space-x-4">
+                    <img id="weather-icon" src="" alt="Weather icon" class="w-20 h-20">
+                    <p id="weather-description" class="text-xl text-gray-600 capitalize"></p>
+                </div>
+                
+                <!-- Temperature -->
+                <p class="text-6xl font-extrabold text-blue-600">
+                    <span id="temperature"></span>°C
+                </p>
+                
+                <!-- Humidity -->
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-water text-blue-500"></i>
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
